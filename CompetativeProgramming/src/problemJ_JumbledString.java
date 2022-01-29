@@ -26,10 +26,10 @@ public class problemJ_JumbledString {
         } else {
             num0s = numDoubles(a);
         }
-        int num1s = numDoubles(d);
+        //int num1s = numDoubles(d);
 
         System.out.println(num0s);
-        System.out.println(num1s);
+        //System.out.println(num1s);
 
         //find which one
 

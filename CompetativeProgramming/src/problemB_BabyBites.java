@@ -31,6 +31,15 @@ public class problemB_BabyBites {
 //
 //        3
 //        mumble mumble mumble
+        //
+//        makes sense
+
+//        int n = 3;
+//        String[] strings = {"mumble", "mumble", "mumble"};
+//
+//        String dtms = doesThisMakeSense(n, strings);
+//
+//        System.out.println(dtms);
 
         Scanner scanner = new Scanner(System.in);
 
@@ -42,14 +51,10 @@ public class problemB_BabyBites {
 
         String[] strings = string.split("\\s+");
 
-        //int n = 3;
-        //String[] strings = {"mumble", "mumble", "mumble"};
-
         String dtms = doesThisMakeSense(n, strings);
 
         System.out.println(dtms);
-//
-//        makes sense
+
     }
 
     private static String doesThisMakeSense(int n, String[] strings) {
