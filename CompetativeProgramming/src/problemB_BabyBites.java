@@ -34,8 +34,6 @@ public class problemB_BabyBites {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter name, age and salary:");
-
         // number input
         Integer n = Integer.parseInt(scanner.nextLine());
 
