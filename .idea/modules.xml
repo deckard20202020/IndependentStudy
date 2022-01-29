@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CompetativeProgramming/CompetativeProgramming.iml" filepath="$PROJECT_DIR$/CompetativeProgramming/CompetativeProgramming.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/IndependentStudy.iml" filepath="$PROJECT_DIR$/.idea/IndependentStudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LeetCode/LeetCode.iml" filepath="$PROJECT_DIR$/LeetCode/LeetCode.iml" />
     </modules>
   </component>
 </project>
