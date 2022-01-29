@@ -1,3 +1,5 @@
+package PracticeExam_22_1_29;
+
 import java.util.Scanner;
 
 public class problemB_BabyBites {

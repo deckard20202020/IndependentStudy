@@ -1,3 +1,5 @@
+package PracticeExam_22_1_29;
+
 public class problemC_CodeCleanups {
     public static void main(String[]args){
 
