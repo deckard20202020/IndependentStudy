@@ -1,3 +1,5 @@
+package BinarySearch;
+
 import java.util.HashSet;
 
 public class BinarySearch_Easy_349_IntersectionOfTwoArrays {

@@ -1,3 +1,5 @@
+package BinarySearch;
+
 public class BinarySearch_Easy_278_BadVersion {
     /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */

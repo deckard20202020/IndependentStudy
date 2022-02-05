@@ -1,3 +1,5 @@
+package BinarySearch;
+
 public class BinarySearch_Easy_167_TwoSum2 {
     class Solution {
         public int[] twoSum(int[] numbers, int target) {

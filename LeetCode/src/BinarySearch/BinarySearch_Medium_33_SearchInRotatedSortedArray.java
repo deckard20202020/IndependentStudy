@@ -1,3 +1,5 @@
+package BinarySearch;
+
 public class BinarySearch_Medium_33_SearchInRotatedSortedArray {
     public int search(int[] nums, int target) {
 
