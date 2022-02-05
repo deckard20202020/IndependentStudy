@@ -1,23 +1,5 @@
-public class main {
-
-    public static void main (String args[]) {
-//        int[] array = {4,5,6,7,0,1,2};
-//        int target = 0;
-//
-//        int index = search(array, target);
-//
-//        System.out.println(index);
-
-        int[]array2 = {5,1,3};
-        int target = 1;
-
-        int index = search(array2, target);
-
-        System.out.println(index);
-
-    }
-
-    public static int search(int[] nums, int target) {
+public class BinarySearch_Medium_33_SearchInRotatedSortedArray {
+    public int search(int[] nums, int target) {
 
         //3.
         //you then know which half the number is in
@@ -74,6 +56,4 @@ public class main {
         //if you don't find the target
         return -1;
     }
-
 }
-
