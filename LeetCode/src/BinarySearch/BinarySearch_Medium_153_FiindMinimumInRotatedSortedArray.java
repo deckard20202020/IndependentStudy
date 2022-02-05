@@ -1,20 +1,7 @@
-public class main {
+package BinarySearch;
 
-    public static void main (String args[]) {
-        //int[] array = {4,5,6,7,0,1,2};
-        //int[] array = {11,13,15,17};
-        //[11,13,15,17]
-        int[] array = {2,1};
-
-        int index = findMin(array);
-
-        System.out.println(index);
-
-
-
-    }
-
-    private static int findMin(int[] nums) {
+public class BinarySearch_Medium_153_FiindMinimumInRotatedSortedArray {
+    public int findMin(int[] nums) {
 
         //find where the array has been rotated.
         //can use a binary search
@@ -40,9 +27,14 @@ public class main {
             int midpoint = left + (right - left)/2;
 
             //have we found it?
+            //check the one to the right first to avoid out of bounds errors
+            if (nums[midpoint] > nums[midpoint + 1]) {
+                return nums[midpoint + 1];
+            }
+            //check the one to the left
             if (nums[midpoint] < nums[midpoint-1]) {
-                //if (nums[midpoint] <= nums[length -1] && nums[midpoint] >= nums[0]) {
                 return nums[midpoint];
+                //we haven't found it
             } else if (nums[midpoint] > nums[length-1]){
                 //go right
                 left = midpoint + 1;
@@ -54,6 +46,4 @@ public class main {
 
         return 1;
     }
-
 }
-
