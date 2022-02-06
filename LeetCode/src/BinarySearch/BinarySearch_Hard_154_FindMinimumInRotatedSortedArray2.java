@@ -17,7 +17,7 @@ public class BinarySearch_Hard_154_FindMinimumInRotatedSortedArray2 {
 
         while (start < end) {
             int midpoint = start + (end - start)/2;
-            
+
             if (nums[midpoint] < nums[end]) {
                 //go left
                 end = midpoint;
