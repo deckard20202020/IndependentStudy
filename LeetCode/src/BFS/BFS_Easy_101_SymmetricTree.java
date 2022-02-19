@@ -40,7 +40,7 @@ public class BFS_Easy_101_SymmetricTree {
          TreeNode() {}
 
          TreeNode(int val) { this.val = val; }
-         
+
          TreeNode(int val, TreeNode left, TreeNode right) {
              this.val = val;
              this.left = left;
