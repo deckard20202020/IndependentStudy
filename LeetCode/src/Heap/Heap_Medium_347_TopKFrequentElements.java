@@ -1,15 +1,14 @@
 package Heap;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.PriorityQueue;
 
 public class Heap_Medium_347_TopKFrequentElements {
     public int[] topKFrequent(int[] nums, int k) {
 
-        //make a hashmap
-        //key = num value = #of occurances
-        //make a priority queue that will store pairs.
-        //scroll through the hashmap and add the pairs to the priority queue
-        //pop the priority queue k times and add them to our return array
+        //This is not the fastest solution, this is the solution I came up with.
+        //Need to google this problem and learn the faster algorithm.
 
         int[] answer = new int[k];
 
@@ -17,7 +16,7 @@ public class Heap_Medium_347_TopKFrequentElements {
 
         for(int i = 0; i<nums.length; i++) {
             if (!map.containsKey(nums[i])) {
-                map.put(nums[i], i);
+                map.put(nums[i], 1);
             } else {
                 int increment = map.get(nums[i]);
                 increment ++;
@@ -26,12 +25,38 @@ public class Heap_Medium_347_TopKFrequentElements {
 
         }
 
-        //how do I scroll through a hashmap???
+        PriorityQueue<Pair> pq = new PriorityQueue<>(Collections.reverseOrder());
 
-        //do I need to make a new class pairs???
+        for(Integer key: map.keySet()) {
+            Pair p = new Pair(key, map.get(key));
+            pq.add(p);
+        }
 
-        //my priority queue should be ordered by the second value of my pairs.
+        for (int i = 0; i < k; i++){
+            Pair p = pq.poll();
+            int j = p.a;
+            answer[i] = j;
+        }
 
         return answer;
+    }
+
+    public class Pair implements Comparable<Pair>{
+        int a;
+        int b;
+
+        public Pair(int a, int b) {
+            this.a = a;
+            this.b = b;
+        }
+
+        @Override
+        public int compareTo (Pair second) {
+            if (this.b > second.b) {
+                return 1;
+            } if (this.b < second.b) {
+                return -1;
+            } else return 0;
+        }
     }
 }
