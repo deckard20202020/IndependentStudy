@@ -3,17 +3,11 @@ package DynamicProgramming;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Testing {
-    public static void main (String[] args) {
-        int n = 4;
-
-        List<List<Integer>> answer = findTotals(n);
-        System.out.println(answer);
-    }
-
-    private static List<List<Integer>> findTotals(int numRows) {
+public class DP_118_PascalsTriangle {
+    public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
+        List<Integer> list3 = new ArrayList<>();
 
         //base cases
         if (numRows == 1) {
@@ -24,8 +18,11 @@ public class Testing {
 
         if (numRows == 2) {
             list2.add(1);
-            list2.add(1);
             list1.add(list2);
+            list3.add(1);
+            list3.add(1);
+            list1.add(list3);
+
             return list1;
         }
 
@@ -33,7 +30,6 @@ public class Testing {
         list2.add(1);
         list1.add(list2);
 
-        List<Integer> list3 = new ArrayList<>();
         list3.add(1);
         list3.add(1);
         list1.add(list3);
@@ -47,7 +43,7 @@ public class Testing {
     }
 
     private static List<Integer> addARow(List<Integer> l, int i) {
-        List<Integer> answerList = new ArrayList <Integer>();
+        List<Integer> answerList = new ArrayList<Integer>();
 
         answerList.add(0, l.get(0));
 
@@ -58,6 +54,4 @@ public class Testing {
 
         return answerList;
     }
-
-
 }
