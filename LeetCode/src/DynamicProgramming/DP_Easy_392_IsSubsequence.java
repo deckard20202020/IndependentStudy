@@ -1,27 +1,15 @@
 package DynamicProgramming;
 
-import java.util.ArrayList;
-import java.util.List;
+public class DP_Easy_392_IsSubsequence {
+    public boolean isSubsequence(String s, String t) {
 
-public class Testing {
-    public static void main (String[] args) {
-        String s = "";
-        String t = "ahbgdc";
-
-        boolean answer = isSubsequence(s,t);
-
-        System.out.println(answer);
-    }
-
-    private static boolean isSubsequence(String s, String t) {
+        //should be O(n)-length of S
 
         //edge cases
-        if ( t.length() == 0 || s.length() > t.length()) {
+        if (s.length() > t.length()) {
             return false;
         }
 
-        //second edge case
-        //we know length of t is greater than 0
         if (s.length() == 0) {
             return true;
         }
@@ -53,6 +41,4 @@ public class Testing {
         //if we haven't found a match
         return false;
     }
-
-
 }
