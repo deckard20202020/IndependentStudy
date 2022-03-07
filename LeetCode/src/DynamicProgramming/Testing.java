@@ -5,58 +5,29 @@ import java.util.List;
 
 public class Testing {
     public static void main (String[] args) {
-        int n = 4;
+        int[] input = {1,100,1,1,1,100,1,1,100,1};
 
-        List<List<Integer>> answer = findTotals(n);
+        int answer = (minCostClimbingStairs(input));
+
         System.out.println(answer);
     }
 
-    private static List<List<Integer>> findTotals(int numRows) {
-        List<List<Integer>> list1 = new ArrayList<>();
-        List<Integer> list2 = new ArrayList<>();
+    private static int minCostClimbingStairs(int[] cost) {
 
-        //base cases
-        if (numRows == 1) {
-            list2.add(1);
-            list1.add(list2);
-            return list1;
+        //base case
+        if (cost.length <= 2) {
+            return Math.min(cost[0],cost[1]);
         }
 
-        if (numRows == 2) {
-            list2.add(1);
-            list2.add(1);
-            list1.add(list2);
-            return list1;
+        int[] total = new int[cost.length];
+        total[0] = cost[0];
+        total[1] = cost[1];
+
+        for (int i = 2; i < total.length; i++) {
+            total[i] = Math.min(total[i-1], total[i-2] + cost[i]);
         }
 
-
-        list2.add(1);
-        list1.add(list2);
-
-        List<Integer> list3 = new ArrayList<>();
-        list3.add(1);
-        list3.add(1);
-        list1.add(list3);
-
-        for (int i = 3; i <=numRows; i++) {
-            list3 = addARow(list3, i);
-            list1.add(list3);
-        }
-
-        return list1;
-    }
-
-    private static List<Integer> addARow(List<Integer> l, int i) {
-        List<Integer> answerList = new ArrayList <Integer>();
-
-        answerList.add(0, l.get(0));
-
-        for (int j = 1; j < i-1; j++) {
-            answerList.add(j, l.get(j-1) + l.get(j));
-        }
-        answerList.add(i-1, l.get(i-2));
-
-        return answerList;
+        return Math.min(total[total.length -1], total[total.length - 2]);
     }
 
 
