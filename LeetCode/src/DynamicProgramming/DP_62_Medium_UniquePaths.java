@@ -1,19 +1,19 @@
 package DynamicProgramming;
 
-import java.util.ArrayList;
-import java.util.List;
+public class DP_62_Medium_UniquePaths {
+    public int uniquePaths(int m, int n) {
 
-public class Testing {
-    public static void main (String[] args) {
-        int m = 3;
-        int n = 7;
-        
-        int answer = uniquePaths(m,n);
-        
-        System.out.println(answer);
-    }
+        //Should be O(n*m)
+        //we are just traversing the grid
+            //this was the best I could come up with.
+            //Maybe check the internet to see if there is a faster solution
 
-    private static int uniquePaths(int m, int n) {
+        //for each grid space, the # of ways to get to that space
+        //is the sum of the space above it and to the left
+        //just need to check to make sure the spaces
+        //above and to the left are within the range of the grid
+        //the base cases will be the space to the right and down from the origin
+
         //m = rows, n= columns
 
         //make a grid to store the values
@@ -41,6 +41,4 @@ public class Testing {
 
         return grid[m-1][n-1];
     }
-
-
 }
