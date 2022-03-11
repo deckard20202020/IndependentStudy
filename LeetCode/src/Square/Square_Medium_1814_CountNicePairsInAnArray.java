@@ -1,19 +1,12 @@
-package DynamicProgramming;
+package Square;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class Testing {
-    public static void main (String[] args) {
+public class Square_Medium_1814_CountNicePairsInAnArray {
+    public int countNicePairs(int[] nums) {
 
-        int [] nums = {13,10,35,24,76};
-        int answer = countNicePairs(nums);
-        System.out.println(answer);
-    }
-
-    public static int countNicePairs(int[] nums) {
+        //I fee like I could tally the answer in the one loop instead of having two loops
 
         //Looking for:
         //nums[i] + rev(nums[j]) == nums[j] + rev(nums[i])
@@ -47,6 +40,7 @@ public class Testing {
         int a = (int) answer%1000000007;
 
         return  a;
+
     }
 
     private static int rev(int n) {
@@ -57,5 +51,4 @@ public class Testing {
         }
         return r;
     }
-
 }
