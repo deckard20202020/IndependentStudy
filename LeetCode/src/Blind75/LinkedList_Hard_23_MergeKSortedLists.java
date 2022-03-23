@@ -1,43 +1,15 @@
 package Blind75;
 
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.PriorityQueue;
 
-public class Testing {
-    public static void main (String[] args) {
-
-        ListNode[] list = new ListNode[3];
-        ListNode head = new ListNode(1);
-        head.next = new ListNode (4);
-        head.next.next = new ListNode(5);
-        list[0] = head;
-
-        head = new ListNode(1);
-        head.next = new ListNode (3);
-        head.next.next = new ListNode(4);
-        list[1] = head;
-
-        head = new ListNode(2);
-        head.next = new ListNode (6);
-        list[2] = head;
-
-        ListNode answer = mergeKLists(list);
-
-        ListNode current = answer;
-        while (current != null) {
-            System.out.println(current);
-            current = current.next;
-        }
-
-
-
-    }
-
-    public static ListNode mergeKLists(ListNode[] lists) {
+public class LinkedList_Hard_23_MergeKSortedLists {
+    public ListNode mergeKLists(ListNode[] lists) {
 
         //idea-put all  nodes in PQ and just pop them
+        //There is another way to do this in same amount of time but with less space
+        //Merge with Divide and Conquer
+        //See solution on Leetcode
 
         //edge cases
         if (lists == null) {
@@ -47,7 +19,7 @@ public class Testing {
             return null;
         }
 
-        //define PriorityQueue with comparator
+        //define PriorityQueue with comparator-KNOW THIS!!!
         PriorityQueue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>(){
             public int compare(ListNode l1, ListNode l2){
                 return l1.val - l2.val;
@@ -78,17 +50,4 @@ public class Testing {
 
 
     }
-
-
-
-
 }
-
-//class ListNode {
-//    int val;
-//    ListNode next;
-//
-//    ListNode() {}
-//    ListNode(int val) { this.val = val; }
-//    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-//}
