@@ -1,29 +1,7 @@
 package Blind75;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-
-public class Testing {
-    public static void main (String[] args) {
-
-        int n = 3;
-        ListNode head = new ListNode(1);
-        head.next = new ListNode (2);
-        head.next.next = new ListNode(3);
-//        head.next.next.next = new ListNode(4);
-//        head.next.next.next.next = new ListNode(5);
-
-        ListNode answer = removeNthFromEnd(head, n);
-
-        while(answer != null) {
-            System.out.println(answer.val);
-        }
-
-    }
-
-    private static ListNode removeNthFromEnd(ListNode head, int n) {
+public class LinkedList_Medium_19_RemoveNthNodeFromEndOfList {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
 
         //idea: reverse the linked list and then go n nodes and remove it.
         // then reverse the list again.
@@ -59,10 +37,10 @@ public class Testing {
             fast = fast.next;
         }
 
-        while ( fast != null || fast.next != null) {
+        while (fast.next != null) {
             //advance the fast pointer
             fast = fast.next;
-           //advance the slow pointer
+            //advance the slow pointer
             slow = slow.next;
         }
 
@@ -72,14 +50,6 @@ public class Testing {
         slow.next = temp;
 
         return head;
+
     }
 }
-
-//class ListNode {
-//    int val;
-//    ListNode next;
-//
-//    ListNode() {}
-//    ListNode(int val) { this.val = val; }
-//    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-//}
