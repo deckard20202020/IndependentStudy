@@ -27,16 +27,32 @@ public class LinkedList_Medium_19_RemoveNthNodeFromEndOfList {
             return head;
         }
 
-
         ListNode fast = head;
         ListNode slow = head;
-        int count = 0;
 
         //move the fast pointer by n nodes
         for (int i = 0; i < n; i++) {
             fast = fast.next;
         }
 
+        //check to see if we have reached the end and need to remove the first node
+        if (fast == null) {
+            head = head.next;
+            return head;
+        }
+
+        //check to see if we have reached the end
+        if (fast.next == null) {
+            for (int i = 0; i < n-1; i++) {
+                ListNode temp = slow.next.next;
+                slow.next = temp;
+
+                return head;
+            }
+        }
+
+
+        //move both nodes until the fast one reaches the end
         while (fast.next != null) {
             //advance the fast pointer
             fast = fast.next;
