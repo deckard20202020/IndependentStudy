@@ -1,4 +1,4 @@
-package Blind75;
+package BFS.Blind75;
 
 public class LinkedList_Easy_206_ReverseLinkedList {
 

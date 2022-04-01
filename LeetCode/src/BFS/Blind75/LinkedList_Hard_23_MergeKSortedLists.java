@@ -1,4 +1,4 @@
-package Blind75;
+package BFS.Blind75;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
