@@ -1,4 +1,4 @@
-package BFS.Blind75;
+package Blind75;
 
 public class LinkedList_Medium_19_RemoveNthNodeFromEndOfList {
     public ListNode removeNthFromEnd(ListNode head, int n) {

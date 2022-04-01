@@ -1,23 +1,7 @@
-package BFS.Blind75;
+package Blind75;
 
-public class Testing {
-    public static void main (String[] args) {
-
-        int n = 3;
-        ListNode head = new ListNode(1);
-        head.next = new ListNode (2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
-
-        reorderList(head);
-
-        System.out.println(head);
-
-
-        }
-
-    private static void reorderList(ListNode head) {
+public class LinkedList_Medium_143_ReorderList {
+    public void reorderList(ListNode head) {
 
         //idea 1 could scroll through the list making a pair for each node.
         //pairs include value and index
@@ -69,7 +53,7 @@ public class Testing {
 
     }
 
-    public static void mergeLists(ListNode first, ListNode second) {
+    public void mergeLists(ListNode first, ListNode second) {
         while (first != null) {
             //give reference to first.next and second.next
             ListNode first_next = first.next;
@@ -93,7 +77,7 @@ public class Testing {
     }
 
 
-    public static ListNode reverseList(ListNode head) {
+    public ListNode reverseList(ListNode head) {
 
         ListNode prev = null;
         ListNode current = head;
@@ -114,14 +98,4 @@ public class Testing {
 
         return head;
     }
-
 }
-
-//class ListNode {
-//    int val;
-//    ListNode next;
-//
-//    ListNode() {}
-//    ListNode(int val) { this.val = val; }
-//    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-//}
