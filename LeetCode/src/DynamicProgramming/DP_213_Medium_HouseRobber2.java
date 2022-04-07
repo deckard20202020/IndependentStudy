@@ -1,9 +1,29 @@
 package DynamicProgramming;
 
-public class Testing {
-    public static void main (String[] args) {
+public class DP_213_Medium_HouseRobber2 {
+    public int rob(int[] nums) {
 
-        int [] nums = {1,3,1,3,100};
+        //O(n)
+
+        //check base cases
+        if (nums.length == 1) {
+            return nums[0];
+        }
+
+        if (nums.length == 2) {
+            return Math.max(nums[0], nums[1]);
+        }
+
+        //initialize our array
+        int[]max = new int[nums.length];
+        max[0] = nums[0];
+        max[1] = nums[1];
+
+        //better way to do this might be to make two new arrays
+        //one starts at 1 and goes to end
+        //other starts at 0 and goes to end-1
+        //take the max of these two values
+        //like doing HouseRobber two times
 
         int[] withOutFirst = new int[nums.length-1];
         for (int i = 1; i < nums.length; i++) {
@@ -15,15 +35,14 @@ public class Testing {
             withOutLast[i] = nums[i];
         }
 
-        int noFirst = rob(withOutFirst);
-        int noLast = rob(withOutLast);
+        int noFirst = findMax(withOutFirst);
+        int noLast = findMax(withOutLast);
 
-        int answer = Math.max(noFirst, noLast);
+        return Math.max(noFirst, noLast);
 
-        System.out.println(answer);
     }
 
-    private static int rob(int[] nums) {
+    private static int findMax(int[] nums) {
         //check base cases
         if (nums.length == 1) {
             return nums[0];
@@ -50,6 +69,4 @@ public class Testing {
 
         return max[nums.length - 1];
     }
-
-
 }
