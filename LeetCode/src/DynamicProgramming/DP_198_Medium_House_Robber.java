@@ -1,19 +1,11 @@
 package DynamicProgramming;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+public class DP_198_Medium_House_Robber {
+    public int rob(int[] nums) {
 
-public class Testing {
-    public static void main (String[] args) {
+        //1-D array
+        //O(n) time
 
-        int [] nums = {1,2,3,1};
-        int answer = rob(nums);
-        System.out.println(answer);
-    }
-
-    private static int rob(int[] nums) {
         //base case
         if (nums.length == 1) {
             return nums[0];
@@ -37,6 +29,6 @@ public class Testing {
 
         //return our last value
         return max[nums.length - 1];
-    }
 
+    }
 }
