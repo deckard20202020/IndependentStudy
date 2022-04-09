@@ -15,9 +15,26 @@ public class Problem1 {
 
         int numberOfTestCases = Integer.parseInt(scanner.nextLine());
 
+        //used for printing output-feel free to delete
         int caseNumber = 1;
 
         for (int i = 0; i < numberOfTestCases; i++) {
+
+            //could be useful for lines of numbers
+            //feel free to delete
+
+            //String input
+            String string = scanner.nextLine();
+            //split them by spacees
+            String[] arrayOfIntsAsStrings = string.split("\\s+");
+            //convert them to an array of ints
+            int[] numbers = new int[arrayOfIntsAsStrings.length];
+            for (int j = 0; j < numbers.length; j++) {
+                numbers[j] = Integer.parseInt(arrayOfIntsAsStrings[j]);
+            }
+
+            System.out.println(caseNumber);
+            caseNumber++;
 
         }
     }
