@@ -3,53 +3,43 @@ package DynamicProgramming;
 public class Testing {
     public static void main (String[] args) {
 
-        int [] nums = {1,3,1,3,100};
+        String text1 = "abcde";
+        String text2 = "ace";
 
-        int[] withOutFirst = new int[nums.length-1];
-        for (int i = 1; i < nums.length; i++) {
-            withOutFirst[i-1] = nums[i];
-        }
 
-        int[] withOutLast = new int[nums.length-1];
-        for (int i = 0; i < nums.length - 1; i++) {
-            withOutLast[i] = nums[i];
-        }
 
-        int noFirst = rob(withOutFirst);
-        int noLast = rob(withOutLast);
-
-        int answer = Math.max(noFirst, noLast);
-
+        int answer = longestCommonSubsequence(text1, text2);
         System.out.println(answer);
     }
 
-    private static int rob(int[] nums) {
-        //check base cases
-        if (nums.length == 1) {
-            return nums[0];
+    private static int longestCommonSubsequence(String text1, String text2) {
+
+        //check edge cases
+        if (text1.length() == 0 || text2.length() == 0
+            || text1 == null || text2 == null) {
+            return 0;
         }
 
-        if (nums.length == 2) {
-            return Math.max(nums[0], nums[1]);
+        int answer = 0;
+
+        int text1Length = text1.length();
+        int text2Length = text2.length();
+
+        int [][] array = new int[text1Length + 1][text2Length + 1];
+
+        for (int i = 1; i < text1Length + 1; i++) {
+            for (int j = 1; j < text2Length + 1; j++) {
+                if (text1.charAt(i-1) == text2.charAt(j-1)) {
+                    array[i][j] = array[i -1][j-1] + 1;
+                } else {
+                    array[i][j] = Math.max(array[i-1][j], array[i][j-1]);
+                }
+            }
         }
 
-        //initialize our array
-        int[]max = new int[nums.length];
-        max[0] = nums[0];
-        max[1] = Math.max(nums[0], nums[1]);
+        answer = array[text1Length][text2Length];
 
-        //better way to do this might be to make two new arrays
-        //one starts at 1 and goes to end
-        //other starts at 0 and goes to end-1
-        //take the max of these two values
+        return answer;
 
-        //scroll through the rest of the array and update
-        for (int i = 2; i < nums.length; i++) {
-            max[i] = Math.max(max[i-2] + nums[i], max[i-1]);
-        }
-
-        return max[nums.length - 1];
     }
-
-
 }
