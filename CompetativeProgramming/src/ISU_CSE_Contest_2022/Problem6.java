@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Problem1 {
+public class Problem6 {
     public static void main(String[] args) throws FileNotFoundException {
 
         File file = new File("C:\\Users\\MSinnwell\\Projects\\IndependentStudy\\IndependentStudy\\CompetativeProgramming\\src\\ISU_CSE_Contest_2022\\testing.txt");

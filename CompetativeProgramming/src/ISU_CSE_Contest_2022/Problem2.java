@@ -25,7 +25,7 @@ public class Problem2 {
 
             //String input
             String string = scanner.nextLine();
-            //split them by spacees
+            //split them by spaces
             String[] arrayOfIntsAsStrings = string.split("\\s+");
             //convert them to an array of ints
             int[] numbers = new int[arrayOfIntsAsStrings.length];
