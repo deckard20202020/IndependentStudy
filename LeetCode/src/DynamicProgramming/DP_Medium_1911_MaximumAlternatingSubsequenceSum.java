@@ -1,15 +1,11 @@
 package DynamicProgramming;
 
-public class Testing {
-    public static void main (String[] args) {
-
-    int[] nums = {4,2,5,3};
-
-        int answer = maxAlternatingSum(nums);
-        System.out.println(answer);
-    }
-
+public class DP_Medium_1911_MaximumAlternatingSubsequenceSum {
     private static int maxAlternatingSum(int[] nums) {
+
+        //I do not truly understand why this solution works
+        //Found this online
+        //Need to return to this and review it again.
 
         int sumEven = 0;
         int sumOdd = 0;
