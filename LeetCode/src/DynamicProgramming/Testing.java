@@ -1,26 +1,30 @@
 package DynamicProgramming;
 
+import java.util.ArrayList;
+
 public class Testing {
     public static void main (String[] args) {
 
-    int[] nums = {4,2,5,3};
+        int rowIndex = 4;
 
-        int answer = maxAlternatingSum(nums);
+        ArrayList<Integer> answer = getRow(rowIndex);
         System.out.println(answer);
     }
 
-    private static int maxAlternatingSum(int[] nums) {
+    private static ArrayList<Integer> getRow(int rowIndex) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
 
-        int sumEven = 0;
-        int sumOdd = 0;
+        if (rowIndex < 0)
+            return result;
 
-        for (int i = nums.length -1; i >=0; i--) {
-            int tempEven = Math.max(sumOdd + nums[i], sumEven);
-            int tempOdd = Math.max(sumEven - nums[i], sumOdd);
-            sumEven = tempEven;
-            sumOdd = tempOdd;
+        result.add(1);
+        for (int i = 1; i <= rowIndex; i++) {
+            for (int j = result.size() - 2; j >= 0; j--) {
+                result.set(j + 1, result.get(j) + result.get(j + 1));
+            }
+            result.add(1);
         }
-
-        return sumEven;
+        return result;
     }
+
 }
