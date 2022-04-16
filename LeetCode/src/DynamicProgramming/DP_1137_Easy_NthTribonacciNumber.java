@@ -1,17 +1,7 @@
 package DynamicProgramming;
 
-import java.util.ArrayList;
-
-public class Testing {
-    public static void main (String[] args) {
-
-        int n = 4;
-
-        int answer = tribonacci(n);
-        System.out.println(answer);
-    }
-
-    private static int tribonacci(int n) {
+public class DP_1137_Easy_NthTribonacciNumber {
+    public int tribonacci(int n) {
 
         //this is just like the fibonacci sequence
         //only difference is we need to set the first 3 instead of the first 2
@@ -34,7 +24,6 @@ public class Testing {
         }
 
         return array[n];
+
     }
-
-
 }
