@@ -1,17 +1,7 @@
 package DynamicProgramming;
 
-import java.util.ArrayList;
-
-public class Testing {
-    public static void main (String[] args) {
-
-        int n = 16;
-
-        int answer = getMaximumGenerated(n);
-        System.out.println(answer);
-    }
-
-    private static int getMaximumGenerated(int n) {
+public class DP_Easy_1646_GetMaximumInGeneratedArray {
+    public int getMaximumGenerated(int n) {
 
         //base cases
         if (n == 0) {
@@ -34,14 +24,12 @@ public class Testing {
 
             if ( i*2 + 1 <= n) {
                 array[i*2 + 1] = array[i] + array[i+1];
+                max = Math.max(max, array[i*2 + 1]);
             }
 
-            max = Math.max(max, array[i*2 + 1]);
         }
 
         return max;
 
     }
-
-
 }
