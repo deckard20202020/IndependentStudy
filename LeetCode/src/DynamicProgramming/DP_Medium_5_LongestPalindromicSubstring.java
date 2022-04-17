@@ -1,17 +1,7 @@
 package DynamicProgramming;
 
-import java.util.ArrayList;
-
-public class Testing {
-    public static void main (String[] args) {
-
-        String s = "cbbd";
-
-        String answer = longestPalindrome(s);
-        System.out.println(answer);
-    }
-
-    private static String longestPalindrome(String s) {
+public class DP_Medium_5_LongestPalindromicSubstring {
+    public String longestPalindrome(String s) {
 
         String answer = "";
 
@@ -47,6 +37,7 @@ public class Testing {
         //substring method includes the first number
         //doesn't include the last
         return s.substring(start, end + 1);
+
     }
 
     private static int expandAroundCenter(String s, int left, int right) {
@@ -61,6 +52,4 @@ public class Testing {
         }
         return R-L -1;
     }
-
-
 }
