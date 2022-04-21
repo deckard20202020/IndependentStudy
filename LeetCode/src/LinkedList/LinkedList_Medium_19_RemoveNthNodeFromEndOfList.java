@@ -1,4 +1,6 @@
-package Blind75;
+package LinkedList;
+
+import LinkedList.ListNode;
 
 public class LinkedList_Medium_19_RemoveNthNodeFromEndOfList {
     public ListNode removeNthFromEnd(ListNode head, int n) {

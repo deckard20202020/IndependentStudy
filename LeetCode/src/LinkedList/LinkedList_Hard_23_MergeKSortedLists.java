@@ -1,4 +1,6 @@
-package Blind75;
+package LinkedList;
+
+import LinkedList.ListNode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

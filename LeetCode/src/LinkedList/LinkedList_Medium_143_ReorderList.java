@@ -1,4 +1,6 @@
-package Blind75;
+package LinkedList;
+
+import LinkedList.ListNode;
 
 public class LinkedList_Medium_143_ReorderList {
     public void reorderList(ListNode head) {
