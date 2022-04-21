@@ -1,6 +1,6 @@
 package LinkedList;
 
-import Blind75.ListNode;
+
 
 public class LinkedList_Easy_141_LinkedListCycle {
     public boolean hasCycle(ListNode head) {

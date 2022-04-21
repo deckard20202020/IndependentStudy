@@ -1,6 +1,6 @@
 package LinkedList;
 
-import Blind75.ListNode;
+
 
 public class LinkedList_Easy_21_MergeTwoSortedLists {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
