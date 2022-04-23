@@ -1,24 +1,15 @@
 package DynamicProgramming;
 
-import java.util.ArrayList;
+public class DP_Medium_647_PalindromicSubstrings {
+    public int countSubstrings(String s) {
 
-public class Testing {
-    public static void main (String[] args) {
-
-        String s = "abc";
-
-        int answer = countSubstrings(s);
-        System.out.println(answer);
-    }
-
-    private static int countSubstrings(String s) {
 
         //base case
         if (s.length() == 1) {
             return 1;
         }
 
-       //I don't think we need dynamic programming to solve this problem
+        //I don't think we need dynamic programming to solve this problem
         int count = 0;
 
         for (int i = 0; i < s.length(); i++) {
