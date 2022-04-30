@@ -51,7 +51,7 @@ public class Round1BProblem2 {
     private static long findNumber(int numOfCust, int numOfItems, int[][] balls) {
         long count = 0;
 
-        c
+
 
 
 
