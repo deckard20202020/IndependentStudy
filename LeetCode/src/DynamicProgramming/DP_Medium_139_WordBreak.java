@@ -1,6 +1,7 @@
 package DynamicProgramming;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class DP_Medium_139_WordBreak {
@@ -26,18 +27,25 @@ public class DP_Medium_139_WordBreak {
     private static boolean wordBreak(String s, List<String> wordDict) {
         boolean answer = false;
 
+        //make a hashmap to increase speed of searching
+        HashSet<String> library = new HashSet<>();
+        for (String string : wordDict) {
+            library.add(string);
+        }
+
         String toCheck = "";
         boolean[] dp = new boolean[s.length()];
-        int pointer = 0;
 
         //why is this a dp problem?
         for(int i = 0; i < s.length(); i++) {
             toCheck = toCheck + s.charAt(i);
             for (int j = 0; j <=i; j++) {
-                if(wordDict.contains(toCheck) ||
-                        (dp[j]==true && wordDict.contains(s.substring(j+1,i+1)))) {
+                if(library.contains(toCheck) ||
+                        (dp[j] == true && library.contains(s.substring(j+1, i+1)))) {
+//                if(wordDict.contains(toCheck) ||
+//                        (dp[j]==true && wordDict.contains(s.substring(j+1,i+1)))) {
                     dp[i] = true;
-
+                    break;
                 }
             }
 
