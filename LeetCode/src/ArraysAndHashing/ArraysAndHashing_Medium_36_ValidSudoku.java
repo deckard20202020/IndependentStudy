@@ -1,26 +1,13 @@
-import java.util.*;
+package ArraysAndHashing;
 
-public class main {
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 
-    public static void main (String args[]) {
+public class ArraysAndHashing_Medium_36_ValidSudoku {
+    public boolean isValidSudoku(char[][] board) {
 
-        char[][] board = {{'5','3','.','.','7','.','.','.','.'}
-,{'6','.','.','1','9','5','.','.','.'}
-,{'.','9','8','.','.','.','.','6','.'}
-,{'8','.','.','.','6','.','.','.','3'}
-,{'4','.','.','8','.','3','.','.','1'}
-,{'7','.','.','.','2','.','.','.','6'}
-,{'.','6','.','.','.','.','2','8','.'}
-,{'.','.','.','4','1','9','.','.','5'}
-,{'.','.','.','.','8','.','.','7','9'}};
-
-        boolean answer = isValidSudoku(board);
-        System.out.println(answer);
-
-
-    }
-
-    public static boolean isValidSudoku(char[][] board) {
+        //We have to go through every square of the board so this should be O(n^2)
 
         //we will make 9 col sets, 9 row sets, 9 box sets
         //we will put these sets in an array to easily access them
@@ -32,6 +19,7 @@ public class main {
         List<HashSet<Integer>> colSets = new ArrayList<>();
         List<HashSet<Integer>> boxSets = new ArrayList<>();
 
+        //NEED TO INITIALIZE THE SETS IN THE LISTS!!!
         for (int i = 0; i < 9; i++) {
             rowSets.add(new HashSet<>());
             colSets.add(new HashSet<>());
@@ -63,5 +51,5 @@ public class main {
         return true;
 
     }
-}
 
+}
