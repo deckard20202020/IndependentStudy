@@ -17,6 +17,10 @@ public class main {
         boolean answer = isValidSudoku(board);
         System.out.println(answer);
 
+        int[] nums = {5, 4, 3, 2, 1};
+        Arrays.sort(nums);
+        System.out.println(nums[0]);
+
 
     }
 
