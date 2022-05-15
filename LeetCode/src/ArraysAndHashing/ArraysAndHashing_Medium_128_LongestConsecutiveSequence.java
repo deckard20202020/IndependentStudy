@@ -14,7 +14,6 @@ public class ArraysAndHashing_Medium_128_LongestConsecutiveSequence {
     }
 
     private static int longestConsecutive(int[] nums) {
-
         //idea-put all the numbers in a priority queue
         //or maybe just sort them
         //go through the array and if the next number is 1 higher increment the current streak
@@ -33,19 +32,19 @@ public class ArraysAndHashing_Medium_128_LongestConsecutiveSequence {
         Arrays.sort(nums);
         int longestStreak = 1;
         int tempStreak = 1;
-        int currNum = nums[0];
 
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] == currNum + 1) {
-                tempStreak++;
-                currNum++;
-            } else {
-                currNum = nums[i];
-                tempStreak = 1;
+            if (nums[i] != nums[i-1]) {
+                if (nums[i] == nums[i -1] + 1) {
+                    tempStreak++;
+                } else {
+                    longestStreak = Math.max(longestStreak, tempStreak);
+                    tempStreak = 1;
+                }
             }
-            longestStreak = Math.max(longestStreak, tempStreak);
+
         }
 
-        return longestStreak;
+        return Math.max(longestStreak, tempStreak);
     }
 }
