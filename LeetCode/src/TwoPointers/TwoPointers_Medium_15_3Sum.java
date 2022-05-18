@@ -4,8 +4,8 @@ import java.util.*;
 
 public class TwoPointers_Medium_15_3Sum {
     public static void main(String[] args) {
-//        int[] nums = {-1,0,1,2,-1,-4};
-        int[] nums = {1,2,-2,-1};
+        int[] nums = {-1,0,1,2,-1,-4};
+//        int[] nums = {1,2,-2,-1};
         List<List<Integer>> answer = threeSum(nums);
         for (int i = 0; i < answer.size(); i++) {
             for (int j = 0; j < answer.get(i).size(); j++){
@@ -25,38 +25,47 @@ public class TwoPointers_Medium_15_3Sum {
             return answer;
         }
 
-        //idea
-        //put all values in a hash set
-        HashMap<Integer, Integer> set = new HashMap<>();
-
-        for (int i = 0; i < nums.length; i++) {
-            set.put(nums[i] , i);
-        }
-
+        //sort the array
         Arrays.sort(nums);
 
-        //scroll through array and add up two numbers, removing those two numbers from set
-        for (int j = 0; j < nums.length - 2; j++) {
-            for (int k = j+1; k < nums.length - 1; k++ ) {
-                //find the sum of the two numbers
-                int temp = nums[j] + nums[k];
+        //idea
+        //scroll through the array
+        for (int i = 0; i < nums.length; i++) {
+            //make a right pointer and left pointer
+            int left = i + 1;
+            int right = nums.length -1;
 
-                //see if the opposite of that number is in the set
-                if (set.containsKey(-temp) && set.get(-temp) != j && set.get(-temp) != k) {
-                    //add them to our list
-                    List<Integer> l = new ArrayList<>();
-                    l.add(nums[j]);
-                    l.add(nums[k]);
-                    l.add(-temp);
-                    answer.add(l);
-                    set.remove(nums[j]);
-                    set.remove(nums[k]);
-                    set.remove(-temp);
+            //solution set should not contain duplicates
+            //so skip if left two are duplicate
+            //make sure we don't go out of bounds
+            if (i > 0 && nums[i] == nums[i-1]) {
+                continue;
+            }
+
+            //check to see if the left two plus the right = 0
+            while (left < right) {
+                if (nums[i] + nums[left] + nums[right] == 0) {
+                    ArrayList<Integer> list = new ArrayList<>();
+                    list.add(nums[i]);
+                    list.add(nums[left]);
+                    list.add(nums[right]);
+                    answer.add(list);
+                    left++;
+                    //avoid duplicates
+                    while (left < right && nums[left] == nums[left -1]) {
+                        left++;
+                    }
+                    //< move left pointer to the right
+                } else if (nums[i] + nums[left] + nums[right] < 0) {
+                    left++;
+                    //> move the right pointer to the left
+                } else {
+                    right--;
                 }
-
             }
         }
 
         return answer;
+
     }
 }
