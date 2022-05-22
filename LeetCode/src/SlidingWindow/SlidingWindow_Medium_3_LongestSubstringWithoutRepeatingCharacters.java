@@ -1,8 +1,8 @@
-package TwoPointers;
+package SlidingWindow;
 
 import java.util.HashMap;
 
-public class TwoPointers_Medium_3_LongestSubstringWithoutRepeatingCharacters {
+public class SlidingWindow_Medium_3_LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
 //        String s = "abcabcdd";
 //        String s ="pwwkew";

@@ -1,8 +1,6 @@
-package TwoPointers;
+package SlidingWindow;
 
-import java.util.HashMap;
-
-public class TwoPointers_Medium_567_PermutationInString {
+public class SlidingWindow_Medium_567_PermutationInString {
     public static void main(String[] args) {
         String s1 = "ab";
         String s2 = "eidbaooo";

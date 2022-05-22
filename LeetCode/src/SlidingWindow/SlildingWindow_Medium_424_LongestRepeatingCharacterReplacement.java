@@ -1,9 +1,8 @@
-package TwoPointers;
+package SlidingWindow;
 
 import java.util.HashMap;
-import java.util.HashSet;
 
-public class TwoPointers_Medium_424_LongestRepeatingCharacterReplacement {
+public class SlildingWindow_Medium_424_LongestRepeatingCharacterReplacement {
     public static void main (String[] args) {
 //        String s = "ABAB";
 //        int k = 2;
