@@ -1,6 +1,6 @@
 package BinarySearch;
 
-public class Binary_Medium_371_SumOfTwoIntegers {
+public class BinarySearch_Medium_371_SumOfTwoIntegers {
     public int getSum(int a, int b) {
         while (a != 0 && b != 0) {
             int and = a & b;
