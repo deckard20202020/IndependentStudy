@@ -6,6 +6,11 @@ public class Trees_Easy_543_DiameterOfBinaryTree {
 //        root.left = new TreeNode(2);
 //
 //        [1,2,3,4,5]
+//            1
+//           /  \
+//          2    3
+//         /\
+//        4  5
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
@@ -29,16 +34,8 @@ public class Trees_Easy_543_DiameterOfBinaryTree {
                 return 0;
             }
 
-            int leftHeight = 0;
-            int rightHeight = 0;
-
-            if(root.left != null) {
-                leftHeight = findHeight(root.left);
-            }
-
-            if(root.right != null) {
-                rightHeight = findHeight(root.right);
-            }
+            int rightHeight = findHeight(root.right);
+            int leftHeight = findHeight(root.left);
 
             return leftHeight + rightHeight;
     }
