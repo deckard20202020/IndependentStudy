@@ -1,7 +1,19 @@
-package BFS;
+package Trees;
 
-public class BFS_Easy_104_MaximumDepthOfBinaryTree {
-    public int maxDepth(TreeNode root) {
+public class Trees_Easy_104_MaximumDepthOfBinaryTree {
+    public static void main(String[] args) {
+//        3,9,20,null,null,15,7
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15   );
+        root.right.right = new TreeNode(7);
+
+        int answer = maxDepth(root);
+        System.out.println(answer);
+
+    }
+    public static int maxDepth(TreeNode root) {
 
         //runtime of this should be O(n) because we traversed the entire tree
 
@@ -20,7 +32,7 @@ public class BFS_Easy_104_MaximumDepthOfBinaryTree {
         return answer;
     }
 
-     public class TreeNode {
+     public static class TreeNode {
          int val;
          TreeNode left;
          TreeNode right;
