@@ -54,7 +54,7 @@ public class Graph_Medium_207_CourseSchedule {
 
         int visitedNodes = 0;
 
-        //create a queue for verticies with in-degree 0
+        //create a queue for vertices with in-degree 0
         Queue<Integer> q = new ArrayDeque<>();
 
         //fill the queue
