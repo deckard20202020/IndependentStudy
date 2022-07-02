@@ -6,14 +6,15 @@ import java.util.Hashtable;
 public class DP_Medium_740_DeleteAndEarn {
     public static void main(String[] args) {
 
-        int[]nums = {3,4,2};
+        //int[]nums = {3,4,2};
+        int[] nums = {3,1};
         int answer = deleteAndEarn(nums);
         System.out.println(answer);
     }
 
     private static int deleteAndEarn(int[] nums) {
         //Declare a hash table that maps elements to number of points we could get
-        Hashtable<Integer, Integer> points = new Hashtable<>();
+        HashMap<Integer, Integer> points = new HashMap<>();
 
         //Declare a hash map used for memoization
         HashMap<Integer, Integer> cache = new HashMap<>();
@@ -37,7 +38,7 @@ public class DP_Medium_740_DeleteAndEarn {
         return maxPoints(maxNumber, cache, points);
     }
 
-    private static int maxPoints(int num, HashMap<Integer, Integer> cache, Hashtable<Integer, Integer> points) {
+    private static int maxPoints(int num, HashMap<Integer, Integer> cache, HashMap<Integer, Integer> points) {
         //base cases
         if (num == 0) {
             return 0;
@@ -53,7 +54,10 @@ public class DP_Medium_740_DeleteAndEarn {
         }
 
         //otherwise we need to do the recurrence relation and store it in our cache
-        int answer = Math.max(maxPoints(num - 1, cache, points), maxPoints(num - 2, cache, points) + points.get(num));
-        return answer;
+        int gain = points.getOrDefault(num,0);
+        cache.put(num, Math.max(maxPoints(num - 1, cache, points), maxPoints(num - 2, cache, points) + gain));
+        return cache.get(num);
+//        int answer = Math.max(maxPoints(num - 1, cache, points), maxPoints(num - 2, cache, points) + points.get(num));
+//        return answer;
     }
 }
