@@ -1,7 +1,13 @@
 package DynamicProgramming;
 
 public class DP_198_Medium_House_Robber {
-    public int rob(int[] nums) {
+    public static void main(String[] args){
+        //int [] nums = {2,7,9,3,1};
+        int[] nums = {2,1,1,2};
+        int answer = rob(nums);
+        System.out.println(answer);
+    }
+    public static int rob(int[] nums) {
 
         //1-D array
         //O(n) time
@@ -20,11 +26,11 @@ public class DP_198_Medium_House_Robber {
 
         //initialize that array
         max[0] = nums[0];
-        max[1] = nums[1];
+        max[1] = Math.max(nums[0],nums[1]);
 
         //scroll through the rest of the given array
         for (int i = 2; i < nums.length; i++) {
-            max[i] = Math.max(nums[i-2] + nums[i], max[i-1]);
+            max[i] = Math.max(max[i-2] + nums[i], max[i-1]);
         }
 
         //return our last value
