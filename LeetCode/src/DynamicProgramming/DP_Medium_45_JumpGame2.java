@@ -15,18 +15,35 @@ public class DP_Medium_45_JumpGame2 {
         //this will be the min of the number of stops it takes
         //to get to any index where current index - other index >= value at other index
 
-        //We will use an array to store our answers for each step
-        int[] answers = new int[nums.length];
-        //initialize each entry of the array
-        answers[0] = 0;
-        for (int i = 1; i < nums.length; i++) {
-            answers[i] = Integer.MAX_VALUE;
-        }
-
-        return findJumps(nums.length - 1, nums, answers);
+//        //We will use an array to store our answers for each step
+//        int[] answers = new int[nums.length];
+//        //initialize each entry of the array
+//        answers[0] = 0;
+//        for (int i = 1; i < nums.length; i++) {
+//            answers[i] = Integer.MAX_VALUE;
+//        }
+//
+//        return findJumps(nums.length - 1, nums, answers);
 
         //idea
         //we could also do this iteratively instead of recursively
+
+        int[] minJumps = new int[nums.length];
+        minJumps[0] = 0;
+        for (int i = 1; i < minJumps.length; i++)   {
+            minJumps[i] = Integer.MAX_VALUE;
+        }
+        for (int i = 1; i < nums.length; i++) {
+            for (int j = i - 1; j >= 0; j--) {
+                if (i - j <= nums[j]) {
+                    minJumps[i] = Math.min(minJumps[i], minJumps[j] + 1);
+                }
+            }
+        }
+
+        return minJumps[minJumps.length - 1];
+
+
     }
 
     private static int findJumps(int n, int[] nums, int[] answers) {
