@@ -43,27 +43,55 @@ public class Graph_Easy_FindIfPathexistsInGraph {
             graph.put(from, toEdges);
         }
 
-        //now we can do our dfs
-        Stack<Integer> stack = new Stack<>();
+//        //now we can do our dfs
+//        Stack<Integer> stack = new Stack<>();
+//        Set<Integer> visited = new HashSet<>();
+//        stack.push(source);
+//        visited.add(source);
+//
+//        while (!stack.isEmpty()) {
+//            int current = stack.pop();
+//            visited.add(current);
+//
+//            //check to see if we have reached our destination
+//            if (current == destination) {
+//                return true;
+//            }
+//
+//            List<Integer> neighbors = graph.get(current);
+//            for (Integer neighbor : neighbors) {
+//                if (!visited.contains(neighbor)) {
+//                    stack.push(neighbor);
+//                }
+//            }
+//        }
+//
+//        return false;
+
+        //or a bfs
+        Queue<Integer> q = new ArrayDeque<>();
+        q.add(source);
         Set<Integer> visited = new HashSet<>();
-        stack.push(source);
-        visited.add(source);
 
-        while (!stack.isEmpty()) {
-            int current = stack.pop();
-            visited.add(current);
+        while (!q.isEmpty()) {
+            int size = q.size();
+            int current = q.poll();
 
-            //check to see if we have reached our destination
-            if (current == destination) {
-                return true;
-            }
+            if (!visited.contains(current)) {
+                visited.add(current);
 
-            List<Integer> neighbors = graph.get(current);
-            for (Integer neighbor : neighbors) {
-                if (!visited.contains(neighbor)) {
-                    stack.push(neighbor);
+                //check to see if we have reached our destination
+                if (current == destination) {
+                    return true;
                 }
+
+                List<Integer> neighbors = graph.get(current);
+                for (Integer neighbor : neighbors) {
+                    q.add(neighbor);
+                }
+
             }
+
         }
 
         return false;
