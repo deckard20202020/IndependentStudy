@@ -17,6 +17,7 @@ public class TravelingTheGraphs {
         //Initialize the graph
         HashMap<String, List<Edge>> graph = new HashMap<>();
 
+        //read the data
         String firstLine = scanner.nextLine();
         String[] stringEdges = firstLine.split(" ");
         for (int i = 0; i < stringEdges.length; i++) {
