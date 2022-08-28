@@ -18,7 +18,7 @@ public class IntroProblemsIncreasingArray {
             arr[i] = Integer.valueOf(a[i]);
         }
 
-        int counter = 0;
+        long counter = 0;
 
         for (int i = 1; i < length; i++) {
             if (arr[i] < arr[i - 1]) {
