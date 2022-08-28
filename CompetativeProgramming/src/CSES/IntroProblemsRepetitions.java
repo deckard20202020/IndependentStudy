@@ -21,6 +21,7 @@ public class IntroProblemsRepetitions {
         for (int i = 1; i < string.length(); i++) {
             if (string.charAt(i) == curr) {
                 counter++;
+                max = Math.max(max, counter);
             } else {
                 max = Math.max(max, counter);
                 curr = string.charAt(i);
