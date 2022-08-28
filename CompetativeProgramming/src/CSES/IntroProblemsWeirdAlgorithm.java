@@ -6,12 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class IntroProblems_WeirdAlgorithm {
+public class IntroProblemsWeirdAlgorithm {
     public static void main(String[] args) throws FileNotFoundException {
 
         File file = new File("C:\\Users\\MSinnwell\\Projects\\IndependentStudy\\IndependentStudy\\CompetativeProgramming\\src\\CSES\\test.txt");
 
-        Scanner scanner = new Scanner(file);
+        //Scanner scanner = new Scanner(file);
+
+        Scanner scanner = new Scanner(System.in);
 
         String nString = scanner.nextLine();
 
