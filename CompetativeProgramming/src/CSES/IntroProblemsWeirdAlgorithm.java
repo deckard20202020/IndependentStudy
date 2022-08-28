@@ -17,17 +17,17 @@ public class IntroProblemsWeirdAlgorithm {
 
         String nString = scanner.nextLine();
 
-        int n = Integer.valueOf(nString);
+        long n = Integer.valueOf(nString);
 
-        List<Integer> answer = findPath(n);
+        List<Long> answer = findPath(n);
 
-        for (Integer num : answer) {
+        for (Long num : answer) {
             System.out.print(num + " ");
         }
     }
 
-    private static List<Integer> findPath(int n) {
-        List<Integer> list = new ArrayList<>();
+    private static List<Long> findPath(long n) {
+        List<Long> list = new ArrayList<>();
         list.add(n);
 
         while (n > 1) {
