@@ -15,7 +15,7 @@ public class IntroProblemsRepetitions {
         String string = scanner.nextLine();
 
         char curr = string.charAt(0);
-        int max = 0;
+        int max = 1;
         int counter = 1;
 
         for (int i = 1; i < string.length(); i++) {
