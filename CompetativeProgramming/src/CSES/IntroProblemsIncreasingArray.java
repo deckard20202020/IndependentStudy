@@ -21,9 +21,10 @@ public class IntroProblemsIncreasingArray {
         int counter = 0;
 
         for (int i = 1; i < length; i++) {
-            while (arr[i] < arr[i - 1]) {
-                arr[i]++;
-                counter++;
+            if (arr[i] < arr[i - 1]) {
+                counter = counter + (arr[i -1] - arr[i]);
+                arr[i] = arr[i - 1];
+
             }
         }
 
