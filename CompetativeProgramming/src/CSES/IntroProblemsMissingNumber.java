@@ -9,10 +9,10 @@ import java.util.Set;
 public class IntroProblemsMissingNumber {
     public static void main(String[] args) throws FileNotFoundException {
 
-        File file = new File("C:\\Users\\MSinnwell\\Projects\\IndependentStudy\\IndependentStudy\\CompetativeProgramming\\src\\CSES\\test.txt");
+        //File file = new File("C:\\Users\\MSinnwell\\Projects\\IndependentStudy\\IndependentStudy\\CompetativeProgramming\\src\\CSES\\test.txt");
 
-        Scanner scanner = new Scanner(file);
-        //Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(file);
+        Scanner scanner = new Scanner(System.in);
 
         String line1 = scanner.nextLine();
         String line2 = scanner.nextLine();
