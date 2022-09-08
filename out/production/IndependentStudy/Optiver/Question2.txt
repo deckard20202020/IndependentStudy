@@ -1,1 +1,29 @@
+//Duplicate pairs
+//my test
 (A,B) (A,C) (B,D) (D,B)
+
+//correct output
+input
+(A,B) (A,C) (B,D) (D,E) (C,F) (E,G)
+(A(B(D(E(G))))(C(F)))
+
+//correct output
+input
+(A,B) (A,C) (A,D) (B,E)
+E3
+
+//correct output
+;alskjdf;asjkf
+E1
+
+//correct output
+(A,B) (A,C) (X,Y) (X,Z)
+E4
+
+//correct output
+(A,B) (A,C) (B,D) (D,C)
+E5
+
+//correct output
+(A,B) (B,D) (D,E) (A,C) (C,F) (E,G)
+(A(B(D(E(G))))(C(F)))
