@@ -84,9 +84,9 @@ public class Question2 {
                 }
             }
 
-
                 //if no cars passed or last car was on first
-            if ((!carPassedThroughFirst && !carPassedThroughMain) || carPassedThroughFirst) {
+            if ((!carPassedInPrevSec) || carPassedThroughFirst) {
+//            if ((!carPassedThroughFirst && !carPassedThroughMain) || carPassedThroughFirst) {
                 //priority goes to first st.
                 if (!firstQ.isEmpty()) {
                     int car = firstQ.poll();
@@ -102,7 +102,7 @@ public class Question2 {
                     carPassedInPrevSec = true;
                 }
             } else if (carPassedThroughMain) {
-                //priority goes to main
+                //priority goes to main st.
                 if (!mainQ.isEmpty()) {
                     int car = mainQ.poll();
                     answer[car] = currentTime;
@@ -127,9 +127,7 @@ public class Question2 {
 
             currentTime++;
         }
-
-
-
+        
         return answer;
     }
 }
