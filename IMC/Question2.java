@@ -127,7 +127,7 @@ public class Question2 {
 
             currentTime++;
         }
-        
+
         return answer;
     }
 }
