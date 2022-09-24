@@ -84,7 +84,7 @@ public class Question2 {
                 }
             }
 
-                //if no cars passed or last car was on first
+            //if no cars passed or last car was on first
             if ((!carPassedInPrevSec) || carPassedThroughFirst) {
 //            if ((!carPassedThroughFirst && !carPassedThroughMain) || carPassedThroughFirst) {
                 //priority goes to first st.
