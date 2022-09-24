@@ -23,6 +23,11 @@ public class Question1 {
             return "No";
         }
 
+        //the points are the same
+        if(x1 == x2 && y1 == y2) {
+            return "Yes";
+        }
+
 //        int[][] cache = new int[1001][1001];
 //        for (int[] array : cache) {
 //            Arrays.fill(array, -1);
@@ -40,12 +45,12 @@ public class Question1 {
     private static boolean findPath(int c, int x1, int x2, int y1, int y2) {
 //    private static boolean findPath(int c, int x1, int x2, int y1, int y2, int[][] cache) {
 
-        if (x1 > x2 || y1 > y2) {
-            return false;
-        }
-        if (x1 == x2 && y1 == y2) {
-            return true;
-        }
+//        if (x1 > x2 || y1 > y2) {
+//            return false;
+//        }
+//        if (x1 == x2 && y1 == y2) {
+//            return true;
+//        }
 
 //        if (dfs(c, x1, x2, y1, y2, cache) != -1) {
 //            return true;
@@ -54,11 +59,15 @@ public class Question1 {
 //        return false;
 
         Set<Pair> visited = new HashSet<>();
+//        Queue<Pair> q = new ArrayDeque<>();
         Stack<Pair> stack = new Stack<>();
         Pair pair = new Pair(x1, y1);
+//        q.add(pair);
         stack.push(pair);
 
+//        while(!q.isEmpty()) {
         while (!stack.isEmpty()) {
+//            Pair p = q.poll();
             Pair p = stack.pop();
 
             if (p.x == x2 && p.y == y2) {
@@ -73,6 +82,7 @@ public class Question1 {
             if (!visited.contains(p)) {
                 //find the neighbors
                 addNeighbors(stack, p, c, x2, y2);
+//                addNeighbors(q, p, c, x2, y2);
             }
 
             visited.add(p);
@@ -81,6 +91,7 @@ public class Question1 {
         return false;
     }
 
+//    private static void addNeighbors(Queue<Pair> q, Pair p, int c, int x2, int y2) {
     private static void addNeighbors(Stack<Pair> stack, Pair p, int c, int x2, int y2) {
 
         boolean perfectSquare = false;
@@ -92,6 +103,7 @@ public class Question1 {
         if (!perfectSquare) {
             if (p1.x <= x2 && p1.y <= y2) {
                 stack.add(p1);
+//                q.add(p1);
             }
         }
 
@@ -102,6 +114,7 @@ public class Question1 {
         if (!perfectSquare) {
             if (p2.x <= x2 && p2.y <= y2) {
                 stack.add(p2);
+//                q.add(p2);
             }
         }
 
@@ -112,6 +125,7 @@ public class Question1 {
         if (!perfectSquare) {
             if (p3.x <= x2 && p3.y <= y2) {
                 stack.add(p3);
+//                q.add(p3);
             }
         }
     }
