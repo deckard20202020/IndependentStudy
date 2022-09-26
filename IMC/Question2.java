@@ -5,8 +5,10 @@ import java.util.*;
 public class Question2 {
     public static void main(String[] args) {
 
-        int[] arrival = {0,0,1,4};
-        int[] street = {0,1,1,0};
+//        int[] arrival = {0,0,1,4};
+//        int[] street = {0,1,1,0};
+        int[] arrival = {0, 1000000000};
+        int[] street = {0,1};
 
         int[] answer = getResult(arrival, street);
         for (int i : answer) {
@@ -82,6 +84,24 @@ public class Question2 {
                         firstQ.add(n);
                     }
                 }
+            } else if (mainQ.isEmpty() && firstQ.isEmpty()) {
+                //jump to the next time
+                if (mainQ.isEmpty() && firstQ.isEmpty()) {
+                    //go to the next time
+                    int nextTime = Integer.MAX_VALUE;
+                    for (Integer n : timeToCars.keySet()) {
+                        if (n < nextTime && n > currentTime) {
+                            nextTime = Math.min(nextTime, n);
+                        }
+                    }
+
+                    currentTime = nextTime;
+                    carPassedInPrevSec = false;
+                    carPassedThroughFirst = false;
+                    carPassedThroughMain = false;
+                    continue;
+                }
+
             }
 
             //if no cars passed or last car was on first
@@ -126,6 +146,11 @@ public class Question2 {
             }
 
             currentTime++;
+        }
+
+        List<Integer> a = new ArrayList<>();
+        for (int i = 0; i < answer.length; i++) {
+            a.add(answer[i] );
         }
 
         return answer;

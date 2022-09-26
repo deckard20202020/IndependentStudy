@@ -4,11 +4,16 @@ import java.util.*;
 
 public class Question1 {
     public static void main(String[] args) {
+//        int c = 1;
+//        int x1 = 1;
+//        int y1 = 4;
+//        int x2 = 7;
+//        int y2 = 6;
         int c = 1;
-        int x1 = 1;
-        int y1 = 4;
-        int x2 = 7;
-        int y2 = 6;
+        int x1 = 7;
+        int y1 =9;
+        int x2 = 8;
+        int y2 = 10;
 
         String answer = canReach(c, x1, y1, x2, y2);
         System.out.println(answer);
