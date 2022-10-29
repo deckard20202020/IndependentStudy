@@ -13,6 +13,7 @@ public class SIGPractice1 {
         queryType.add("Add");
 //        queryType.add("AddToKey");
         queryType.add("AddToValue");
+        queryType.add("AddToKey");
         queryType.add("get");
         queryType.add("get");
         ArrayList<Integer> query = new ArrayList<>();
@@ -25,6 +26,10 @@ public class SIGPractice1 {
         query.add(4);
         query.add(4);
 
+        //add to value
+        query.add(1);
+
+        //add to key
         query.add(1);
 
         query.add(2);
