@@ -1,8 +1,6 @@
 package IBM;
 
-import java.util.HashMap;
-
-public class Practice1 {
+public class DataUpdates {
     public static void main (String[] args) {
 
         int n = 4;
