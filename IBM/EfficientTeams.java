@@ -7,6 +7,7 @@ public class EfficientTeams {
 
         int[] skill = {1,2,3,2};
 //        int[] skill = {5, 4, 2, 1};
+//        int[] skill = {1,1,1,2};
         int answer = getTotalEfficiency(skill);
         System.out.println(answer);
     }
