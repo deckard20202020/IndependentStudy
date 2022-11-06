@@ -10,7 +10,7 @@ public class MergingPalindromes {
     //THIS IS WRONG
     //NEED TO FIND THE LONGEST PALINDROME IN EACH WORD, THEN MERGE THE TWO
     //I DID IT IN THE WRONG ORDER
-    
+
     public static void main(String args[]) {
 //        String s1 = "aabbc";
 //        String s2 = "ddefefq";
