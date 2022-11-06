@@ -21,8 +21,8 @@ public class SubstringRemoval {
 
     private static int helper(String seq, int answer) {
 
-        int ab = 0;
-        int bb = 0;
+        int ab = Integer.MAX_VALUE;
+        int bb = Integer.MAX_VALUE;
         if (seq.contains("AB")) {
             seq = seq.replace("AB", "");
             ab = helper(seq, seq.length());
