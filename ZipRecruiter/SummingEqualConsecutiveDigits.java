@@ -17,9 +17,10 @@ public class SummingEqualConsecutiveDigits {
             return num;
         }
 
-        String left = String.valueOf(num.charAt(0));
+//        String left = String.valueOf(num.charAt(0));
 
         for (int i = 1; i < num.length(); i++) {
+            String left = String.valueOf(num.charAt(i -1));
             int count = Integer.valueOf(String.valueOf(num.charAt(i)));
             if (String.valueOf(num.charAt(i)).equals(left)) {
                 while (String.valueOf(num.charAt(i)).equals(left)) {
@@ -30,6 +31,9 @@ public class SummingEqualConsecutiveDigits {
 
                 }
                 i--;
+            } else {
+                count = Integer.valueOf((left));
+
             }
 
 
