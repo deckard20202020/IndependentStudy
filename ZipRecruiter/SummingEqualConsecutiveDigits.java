@@ -19,27 +19,25 @@ public class SummingEqualConsecutiveDigits {
 
 //        String left = String.valueOf(num.charAt(0));
 
-        for (int i = 1; i < num.length(); i++) {
-            String left = String.valueOf(num.charAt(i -1));
+        for (int i = 0; i < num.length(); i++) {
+            int rightIndex = i + 1;
             int count = Integer.valueOf(String.valueOf(num.charAt(i)));
-            if (String.valueOf(num.charAt(i)).equals(left)) {
-                while (String.valueOf(num.charAt(i)).equals(left)) {
+            boolean adding = false;
 
-                    count += Integer.valueOf(String.valueOf(num.charAt(i)));
-                    left = String.valueOf(num.charAt(i));
-                    i++;
-
-                }
-                i--;
-            } else {
-                count = Integer.valueOf((left));
+            while (rightIndex + 1 <= num.length() && String.valueOf(num.charAt(rightIndex)).equals(String.valueOf(num.charAt(i)))) {
+                count += Integer.valueOf(String.valueOf(num.charAt(rightIndex)));
+                rightIndex++;
+                adding = true;
 
             }
 
-
+            if (adding) {
+                i = rightIndex - 1;
+            }
 
             answer = answer + String.valueOf(count);
         }
+
 
         return answer;
     }
