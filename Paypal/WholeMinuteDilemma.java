@@ -37,7 +37,7 @@ public class WholeMinuteDilemma {
             }
         }
 
-
+    return  1;
 
     }
 }

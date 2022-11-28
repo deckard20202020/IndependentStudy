@@ -20,7 +20,9 @@ public class ATT3 {
         for (int i = 0; i < loggedMoves.size(); i++) {
             String curr = loggedMoves.get(i);
 
-            if (loggedMoves)
+
         }
+
+        return 1;
     }
 }
