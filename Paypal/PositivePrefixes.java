@@ -1,12 +1,15 @@
 package Paypal;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class PositivePrefixes {
     public static void main(String[] args) {
 
-        int[] arr = {-6, 3,4, -10};
+//        int[] arr = {-6, 3,4, -10};
+        int[] arr = {-3, 0, 2,1};
         int answer = maxPosPrefixes(arr);
         System.out.println(answer);
     }
