@@ -14,6 +14,15 @@ public class separation {
 
     private static int findMin(int[] numbers, int separation) {
 
+        int minDiff = Integer.MAX_VALUE;
+        for (int i = 0; i < numbers.length - separation; i++) {
+            int diff = Math.abs(numbers[i] - numbers[i + separation]);
+            if (diff < minDiff) {
+                minDiff = diff;
+            }
+        }
+        return minDiff;
+
 //        HashMap<Integer,Integer> map = new HashMap<>();
 //        HashSet<Integer> set = new HashSet<>();
 //
@@ -32,15 +41,15 @@ public class separation {
 
         //n^2
 
-        int answer = Integer.MAX_VALUE;
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = i + separation; j < numbers.length; j++) {
-                int diff = Math.abs(numbers[i] - numbers[j]);
-                answer = Math.min(answer, diff);
-            }
-        }
-
-        return answer;
+//        int answer = Integer.MAX_VALUE;
+//        for (int i = 0; i < numbers.length; i++) {
+//            for (int j = i + separation; j < numbers.length; j++) {
+//                int diff = Math.abs(numbers[i] - numbers[j]);
+//                answer = Math.min(answer, diff);
+//            }
+//        }
+//
+//        return answer;
     }
 
 }
