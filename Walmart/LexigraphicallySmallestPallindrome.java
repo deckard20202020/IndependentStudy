@@ -1,8 +1,6 @@
 package Walmart;
 
-import java.util.*;
-
-public class MakePalindrome {
+public class LexigraphicallySmallestPallindrome {
     public static void main(String[] args) {
 
 //        String string = "aabc";
