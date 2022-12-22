@@ -2,7 +2,8 @@ package Cisco;
 
 public class EarnMaximumMoney {
     public static void main(String[] args) {
-        int[] arr = {3,1,5,8};
+//        int[] arr = {3,1,5,8};
+        int[] arr = {1,5};
         int answer = maxMoney(arr);
         System.out.println(answer);
     }
