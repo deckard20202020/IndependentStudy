@@ -37,6 +37,7 @@ public class DP_Medium_5_LongestPalindromicSubstring {
         //substring method includes the first number
         //doesn't include the last
         return s.substring(start, end + 1);
+//        System.out.print
 
     }
 
